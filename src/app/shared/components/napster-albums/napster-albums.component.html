@@ -1,0 +1,14 @@
+<swiper
+    [config]="configSwiper">
+
+    <ng-template swiperSlide *ngFor="let album of albums">
+        <div class="album">
+            <div class="album-img">
+                <app-napster-img [endpoint]="album.links?.images?.href"></app-napster-img>
+            </div>
+            <p class="album-name">{{album.name}}</p>
+        </div>
+    </ng-template>
+</swiper>
+
+

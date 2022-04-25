@@ -1,0 +1,19 @@
+<main>
+    <div class="container">
+
+        <h2 class="title-section">Top 10 Artistas</h2>
+        <hr>
+
+        <div class="artists">
+            <div *ngFor="let artist of artists" class="artist">
+                <div class="artist-img">
+                    <app-napster-img [endpoint]="artist.links?.images?.href"></app-napster-img>
+                </div>
+                <div class="artist-name">
+                    <p>{{artist.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

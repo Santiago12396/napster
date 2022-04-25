@@ -1,0 +1,41 @@
+@use 'mixins' as m;
+@use 'variables' as *;
+
+main {
+    margin: $separation 0;
+}
+main .container {
+    display: grid;
+    gap: 2rem;
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+        align-items: center;
+    }
+}
+.artist-img {
+    border-radius: .4rem;
+    overflow: hidden;
+}
+.artist-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.artist-type {
+    text-align: center;
+}
+.artist-info > p {
+    margin: 0;
+}
+.artist-info .artist-bio {
+    margin-top: 1rem;
+    text-align: justify;
+}
+.albums {
+    margin-bottom: $separation;
+}
+.albums-title {
+    text-align: center;
+    font-size: 2.5rem;
+}

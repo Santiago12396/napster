@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+// Media Queries
+@mixin cellphone {
+    @media (min-width: $cellphone) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: $laptop) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+@mixin tv {
+    @media (min-width: $tv) {
+        @content;
+    }
+}
+
+@mixin grid($columns, $spacing) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $spacing;
+}

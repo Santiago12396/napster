@@ -1,0 +1,47 @@
+@use 'mixins' as m;
+@use 'variables' as *;
+
+main {
+    margin: $separation 0;
+}
+main .container {
+    display: grid;
+    gap: 2rem;
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+}
+.album {
+    height: 100%;
+    margin-top: $separation;
+}
+.album-img {
+    height: 30rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+.album-img img {
+    height: 100%;
+}
+.album-info {
+    text-align: center;
+    margin-top: 2rem;
+}
+.album-info > p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.album-info .album-type {
+    font-weight: normal;
+}
+table {
+    height: 100%;
+    width: 100%;
+}
+th.mat-header-cell,
+td.mat-cell {
+    text-align: center !important;
+}

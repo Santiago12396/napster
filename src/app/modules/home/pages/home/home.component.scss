@@ -1,0 +1,42 @@
+@use 'mixins' as m;
+@use 'variables' as *;
+
+.title-section {
+    text-align: center;
+}
+.artists {
+    margin: $separation 0;
+    @include m.grid(1, 2rem);
+
+    @media(min-width: 540px) {
+        @include m.grid(2, 2rem);
+    }
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+    }
+    @include m.laptop {
+        @include m.grid(4, 2rem);
+    }
+}
+.artist {
+    width: 25rem;
+    height: 27rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border: .1rem solid black;
+    border-radius: .4rem;
+}
+.artist-img {
+    border-radius: .4rem;
+    overflow: hidden;
+}
+.artist-name {
+    height: 10rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.artist-name p {
+    margin: 0;
+}

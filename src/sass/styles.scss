@@ -1,0 +1,17 @@
+@use 'normalize';
+@use 'global';
+
+// Swiper
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+.swiper {
+    width: 100rem;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

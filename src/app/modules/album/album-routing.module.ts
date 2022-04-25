@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AlbumComponent } from './pages/album/album.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule)
+    component: AlbumComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AlbumRoutingModule { }

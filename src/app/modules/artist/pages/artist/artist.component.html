@@ -1,0 +1,21 @@
+<ng-container *ngIf="artist !== undefined">
+    <main>
+        <div class="container">
+            <div class="artist-img">
+                <app-napster-img [endpoint]="artist.links?.images?.href"></app-napster-img>
+            </div>
+            <div class="artist-info">
+                <p class="artist-name">{{artist.name}}</p>
+                <p class="artist-type">({{artist.type}})</p>
+                <p class="artist-bio" [innerHtml]="artist.bios[0].bio"></p>
+            </div>
+        </div>
+    </main>
+    
+    <section class="albums">
+        <h2 class="albums-title">Álbumes</h2>
+        <div class="container">
+            <app-napster-albums [endpoint]="artist.links?.albums?.href"></app-napster-albums>
+        </div>
+    </section>
+</ng-container>

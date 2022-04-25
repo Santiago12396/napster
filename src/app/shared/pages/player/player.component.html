@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        {{audioService.timeElapsed$ | async}}
+        <mat-slider class="time-slider" (input)="handlePosition($event)" [value]="audioService.playerPercentage$ | async"></mat-slider>
+        {{audioService.timeRemaining$ | async}}
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row class="media-action-bar">
+      <button mat-button (click)="previous()">
+        <mat-icon mat-list-icon>skip_previous</mat-icon>
+      </button>
+  
+      <button mat-button (click)="audioService.togglePlayer()">
+        <mat-icon  *ngIf="status === 'paused'; else statusRef" mat-list-icon>play_circle_filled</mat-icon>
+        <ng-template #statusRef>
+          <mat-icon mat-list-icon>pause</mat-icon>
+        </ng-template>
+      </button>
+  
+      <button mat-button (click)="next()">
+        <mat-icon mat-list-icon>skip_next</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
